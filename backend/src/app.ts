@@ -18,6 +18,10 @@ app.use(
 app.use(express.json());
 app.use(morgan("dev"));
 
+app.get("/", (_req, res) => {
+  res.status(200).json({ success: true, message: "Smart Leads API is running" });
+});
+
 app.get("/health", (_req, res) => {
   res.status(200).json({ success: true, message: "Backend is healthy" });
 });
